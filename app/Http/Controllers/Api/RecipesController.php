@@ -17,6 +17,7 @@ class RecipesController extends Controller
         $recipe = new Recipe;
         $recipe->user_id = Auth::user()->id;
         //Recipe description ho
+        $recipe->title = $request->title;
         $recipe->desc = $request->desc;
         $recipe->ingredients = $request->ingredients;
         $recipe->steps = $request->steps;
@@ -53,6 +54,7 @@ class RecipesController extends Controller
                 'message' => 'unauthorized access'
             ]);
         }
+        $recipe->title = $request->title;
         $recipe->desc = $request->desc;
         $recipe->ingredients = $request->ingredients;
         $recipe->steps = $request->steps;
@@ -124,6 +126,8 @@ class RecipesController extends Controller
         $recipe = new Recipe;
         $recipe->user_id = $request->uid;
         //Recipe description ho
+        
+        $recipe->title = $request->title;
         $recipe->desc = $request->desc;
         $recipe->ingredients = $request->ingredients;
         $recipe->steps = $request->steps;

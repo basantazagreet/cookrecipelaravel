@@ -17,6 +17,7 @@ class CreateRecipesTable extends Migration
             $table->bigIncrements('id');
             
             $table->unsignedBigInteger('user_id');
+            $table->string('title');
             $table->string('desc');
             $table->string('photo')->default('');
             
