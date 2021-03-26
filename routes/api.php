@@ -17,8 +17,9 @@ use App\Http\Controllers\Api\LikesController;
 
 Route::post('login','Api\AuthController@login');
 Route::post('register','Api\AuthController@register');
-Route::get('logout','Api\AuthController@logout')->middleware('jwtAuth');
+Route::get('logout','Api\AuthController@logout');
 Route::post('save_user_info','Api\AuthController@saveUserInfo')->middleware('jwtAuth');
+Route::get('profileinfo','Api\AuthController@profileInfo')->middleware('jwtAuth');
 
 //Recipes
 Route::post('recipes/create','Api\RecipesController@create')->middleware('jwtAuth');
