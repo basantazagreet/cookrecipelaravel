@@ -155,6 +155,30 @@ class RecipesController extends Controller
     }
 
 
+    //Recipe model data type ho
+    function showRecipesInAPI(Recipe $key){
+
+        // $userkoid = $key -> $user_id ;
+        // $user = DB::table('users')->where ('id','$userkoid')->get();
+
+        // $posts = Post::where('user_id',Auth::user()->id)->orderBy('id','desc')->get();
+        // $user = User::where('id',$recipeecipe -> user_id)->get();
+
+        $user = $key -> user;
+
+    
+        
+        return response()->json([
+            'success' => true,
+            'recipe' => $key,
+            
+         ]);
+
+
+
+
+    }
+
 
 
 }
