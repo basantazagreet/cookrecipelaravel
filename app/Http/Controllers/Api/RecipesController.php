@@ -175,9 +175,20 @@ class RecipesController extends Controller
          ]);
 
 
-
-
     }
+
+    public function myRecipes(){
+        $recipes = Recipe::where('user_id',Auth::user()->id)->orderBy('id','desc')->get();
+        $user = Auth::user();
+        return response()->json([
+            'success' => true,
+            'recipes' => $recipes,
+            'user' => $user
+        ]);
+    }
+
+
+
 
 
 

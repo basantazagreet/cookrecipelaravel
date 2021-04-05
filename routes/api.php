@@ -27,6 +27,7 @@ Route::post('recipes/update','Api\RecipesController@update')->middleware('jwtAut
 Route::post('recipes/delete','Api\RecipesController@delete')->middleware('jwtAuth');
 Route::get('recipes','Api\RecipesController@recipes')->middleware('jwtAuth');
 Route::get('getrecipe/{key}','Api\RecipesController@showRecipesInAPI');
+Route::get('recipes/myrecipes','Api\RecipesController@myRecipes')->middleware('jwtAuth');
 
 
 
