@@ -35,7 +35,7 @@ Route::get('recipes/myrecipes','Api\RecipesController@myRecipes')->middleware('j
 Route::post('comments/create','Api\CommentsController@create')->middleware('jwtAuth');
 Route::post('comments/delete','Api\CommentsController@delete')->middleware('jwtAuth');
 Route::post('comments/update','Api\CommentsController@update')->middleware('jwtAuth');
-Route::post('recipes/comments','Api\CommentsController@comments')->middleware('jwtAuth');
+Route::post('recipes/comments','Api\CommentsController@comments');
 
 //Likes
 Route::post('recipes/like','Api\LikesController@like')->middleware('jwtAuth');
